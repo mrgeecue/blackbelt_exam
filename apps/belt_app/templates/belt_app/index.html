@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Poke</title>
+        {% load staticfiles %}
+        <link rel="stylesheet" href="{% static 'belt_app/css/styles.css' %}" media="screen" title="no title"  charset="utf-8"/>
+    </head>
+    <body>
+        <h1>Poke</h1>
+                        <!-- ========== START OF CONTAINER ==========-->
+        <div class="container">
+                        <!-- ==========     LEFT COLUMN    ==========-->
+            <div id="left_column">
+                <h3>Register</h3>
+                    <form action='/pokes' method='post'>
+                        {% csrf_token %}
+                    {{ template_name }}
+                    <label for='name'></label>Name: <input type='text' name='name' /></label>
+                    <label for='alias'></label>Alias: <input type='text' name='alias' /></label>
+                    <label for='email'></label>Email: <input type='text' name='email' /></label>
+                    <label for='password'></label>Password: <input type='password' name='password' /></label>
+                    <label for='confirm_pw'></label>Confirm PW: <input type='password' name='confirm_pw' /></label>
+                    <label for='dob'></label>Date of Birth: <input type='date' name='dob' /></label>
+                    <input type='submit' value='Register' name="pokes"></p>
+                    </form>
+            </div>
+                        <!-- ==========     RIGHT COLUMN    ==========-->
+            <div id="right_column">
+                <h3>Login</h3>
+                    <form action='/login', method='post'>
+                        {% csrf_token %}
+                    <label for="email"></label>Name: <input type='text' name='email' /></label>
+                    <label for="password"></label>Password: <input type='password' name='password' /></label>
+                    <input type='submit' value='Login' name="Login"></p>
+                    </form>
+            </div>
+            <p>
+                @nathan.pascua
+            </p>
+    </body>
+</html>
